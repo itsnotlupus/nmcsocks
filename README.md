@@ -10,7 +10,7 @@ It gets namecoin records from namecoind on demand, rather than doing bulk grabs 
 ## dependencies:
 
 - node ( http://nodejs.org/ )
-- optimist and binary ( npm install optimist binary )
+- optimist and binary ( `npm install optimist binary `)
 
 ## todo
 
