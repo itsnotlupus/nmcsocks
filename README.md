@@ -1,5 +1,5 @@
 
-= NmcSocks: A NameCoin socks proxy.
+# NmcSocks: A NameCoin socks proxy.
 
 Because you can never have too many namecoin socks proxies.
 
@@ -7,19 +7,19 @@ This one is written for node.js.
 It implements some of the new spec.
 It gets namecoin records from namecoind on demand, rather than doing bulk grabs and caching.
 
-== dependencies:
+## dependencies:
 
 - node ( http://nodejs.org/ )
 - optimist and binary ( npm install optimist binary )
 
-== todo
+## todo
 
 - ipv6 support
 - support for the whole spec
 - see what it takes to build standalone binaries
 - test on windows.
 
-== usage
+## usage
 
 From the parent directory,
 
