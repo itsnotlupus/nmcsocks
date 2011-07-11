@@ -59,6 +59,6 @@ To see all the settings, try
 
 ## changelog
 
-v0.1: initial version
-v0.2: better draft spec support (delegate/import/alias stuff), infinite loop mitigation
-v0.3: embedded DNS server to resolve .bit domains
+    v0.1: initial version
+    v0.2: better draft spec support (delegate/import/alias stuff), infinite loop mitigation
+    v0.3: embedded DNS server to resolve .bit domains
