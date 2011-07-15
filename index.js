@@ -1,3 +1,10 @@
 #!/usr/bin/env node
 
-module.exports = require("./lib/nmcsocks");
+require.paths.unshift(__dirname+"/lib");
+require.paths.unshift(__dirname+"/lib/ndns");
+
+//require.paths.unshift(__dirname+"/flat");
+
+module.exports = require("nmcsocks");
+
+
