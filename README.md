@@ -62,3 +62,4 @@ To see all the settings, try
     v0.1: initial version
     v0.2: better draft spec support (delegate/import/alias stuff), infinite loop mitigation
     v0.3: embedded DNS server to resolve .bit domains
+    v0.4: better DNS server support, various bug fixes
