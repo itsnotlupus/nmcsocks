@@ -32,7 +32,7 @@ cd *
 
 echo "* Patching node.js"
 cp ../../flat/* lib/
-perl -pi -e 's{(node::ParseArgs(argc, argv);)}{//$1};' src/node.cc
+perl -pi -e 's{(node::ParseArgs\(argc, argv\);)}{//$1};' src/node.cc
 
 echo "* Building node.js"
 ./configure && make
