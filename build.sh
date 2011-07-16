@@ -3,8 +3,17 @@
 if [ ! -f "$1" ]
 then
   echo "Build a binary version of NmcSocks using a node.js tarball."
-  echo "Usage: $0 <node-tarball.tgz>"
+  echo "Usage: $0 <node-tarball.tgz> [openssl_dir]"
   exit 1
+fi
+
+# This is for MingW, which apparently needs to be told where openssl hangs at.
+if [ -d "$2" ]
+then
+  echo "Using $2 as openssl build directory.."
+  FLAGS=" --openssl-libpath=$2 --openssl-includes=$2/include"
+else
+  FLAGS=""
 fi
 
 
@@ -32,14 +41,23 @@ cd *
 
 echo "* Patching node.js"
 cp ../../flat/* lib/
-perl -pi -e 's{(node::ParseArgs\(argc, argv\);)}{//$1};' src/node.cc
+perl -pi -e 's{(node::ParseArgs\(&?argc, argv\);)}{//$1};' src/node.cc
 
 echo "* Building node.js"
-./configure && make
+./configure $FLAGS && make
 cd ../..
 cp tmp/*/build/default/node nmcsocks
-strip nmcsocks
+if [ -f nmcsocks.exe ]
+then
+  strip nmcsocks.exe
+elif [ -f nmcsocks ]
+then
+  strip nmcsocks
+else
+  echo "## Something went wrong. No executable was built."
+  exit 1
+fi
 
 echo "* nmcsocks is ready."
-# error checking would be nice..
+# more error checking would be nice..
 
