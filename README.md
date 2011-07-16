@@ -3,10 +3,10 @@
 
 NmcSocks is a SOCKS proxy that resolves Namecoin hostnames.
 
-In addition, it can chain its connections into another SOCKS proxy, primarily to allow Tor/I2P interoperability.
+In addition, it can chain its connections into another SOCKS proxy, primarily to allow Tor/I2P interoperability.  
 It can also be used as a DNS server to resolve .bit domains specifically. See examples below.
 
-It is designed to run side-by-side with namecoind, and its default settings will "just work" out of the box.
+It is designed to run side-by-side with namecoind, and its default settings will "just work" out of the box.  
 It also has a number of command line switches to fine tune its behavior.
 
 ## get it
@@ -40,7 +40,7 @@ https://github.com/itsnotlupus/nmcsocks
 
 By default, NmcSocks will start listening for SOCKS proxy requests on port 9055.
 
-It will attempt to chain connections into another local socks proxy on port 9050.
+It will attempt to chain connections into another local socks proxy on port 9050.  
 If such a proxy doesn't exist, connections are made directly.
 
 To run in strict "Tor" mode, where DNS leaks are prevented and "tor" fields in Namecoin records are given priority, use
@@ -69,11 +69,12 @@ To see all the settings, try
 ## dependencies:
 
 This proxy requires namecoin to be installed, configured and running.  
-You can get namecoin from https://github.com/vinced/namecoin
+You can get namecoin from https://github.com/vinced/namecoin  
 Optionally, you can get precompiled namecoin binaries from http://dot-bit.org/
 
 If you are using the source version, you will also need:  
-- node ( http://nodejs.org/ )
+
+- node ( http://nodejs.org/ )  
 - optimist and binary ( `npm install optimist binary `)
 
 ## todo
