@@ -1,0 +1,18 @@
+{
+  "name" : "nmcsocks",
+  "version" : "0.4",
+  "description" : "A socks proxy and DNS resolver for Namecoin.",
+  "main" : "./nmcsocks.js",
+  "repository" : {
+    "type": "git",
+    "url": "http://github.com/itsnotlupus/nmcsocks.git"
+  },
+  "dependencies" : {
+    "binary" : ">=0.2.3",
+    "optimist": ">=0.1"
+  },
+  "license" : "MIT/X11",
+  "engine" : {
+    "node" : ">=0.4.0"
+  }
+}
