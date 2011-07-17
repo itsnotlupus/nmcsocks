@@ -24,13 +24,22 @@ cp lib/*.js flat/
 cp lib/ndns/*.js flat/
 cp node_modules/optimist/index.js flat/optimist.js
 cp node_modules/optimist/node_modules/wordwrap/index.js flat/wordwrap.js
-cat node_modules/binary/index.js | perl -pe 's{./lib/vars.js}{vars}g' > flat/binary.js
+#cat node_modules/binary/index.js | perl -pe 's{./lib/vars.js}{vars}g' > flat/binary.js
+cp node_modules/binary/index.js flat/binary.js
 cp node_modules/binary/lib/vars.js flat/vars.js
 cp node_modules/binary/node_modules/put/index.js flat/put.js
 cp node_modules/binary/node_modules/buffers/index.js flat/buffers.js
 cp node_modules/binary/node_modules/chainsaw/index.js flat/chainsaw.js
 cp node_modules/binary/node_modules/chainsaw/node_modules/traverse/index.js flat/traverse.js
 cp lib/_third_party_main.js flat/_third_party_main.js
+cp lib/_dcrypt.js flat/dcrypt.js
+# convert all require("./path/file") to require("file")
+cd flat
+for file in *
+do
+  perl -pi -e 's{require\(['\''"][^"'\'']+/([^"'\''/]+)['\''"]\)}{require("$1")}g' "$file"
+done
+cd ..
 
 echo "* Unzipping node.js tarball."
 rm -rf tmp/
