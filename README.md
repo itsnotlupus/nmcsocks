@@ -29,14 +29,15 @@ https://github.com/itsnotlupus/nmcsocks
       --shost        Socks Proxy host to chain into                                                          [default: "127.0.0.1"]
       --sport        Socks Proxy port to chain into                                                          [default: 9050]
       --private      Refuse to resolve NameCoin domains that would cause a DNS leak. Implies --chain=always
-      --tor          Resolve Tor addresses preferably. Implies --private
-      --i2p          Resolve I2P addresses preferably. Implies --private
-      --dns          Start a DNS server to resolve Namecoin names
+      --tor          Resolve Tor addresses preferably. Implies --private                                   
+      --i2p          Resolve I2P addresses preferably. Implies --private                                   
+      --dns          Start a DNS server to resolve Namecoin names                                          
       --dnsport      Port for the DNS server to listen on                                                    [default: 9053]
       --dnsip        IP address for the DNS server to listen on                                              [default: "127.0.0.1"]
-      --dir, -d      Namecoin configuration directory
-      --help, -h     Display this help message
-      --version, -v  Show version number and exit
+      --dir          Namecoin configuration directory                                                      
+      --test         Test mode. Enable some static namecoin records. Not for general use.                  
+      --help, -h     Display this help message                                                             
+      --version, -v  Show version number and exit                    
 
 By default, NmcSocks will start listening for SOCKS proxy requests on port 9055.
 
@@ -88,10 +89,10 @@ If you are building from the top of the tree, you will also need:
 
 If you're trying to use the new "fingerprint" support code, you'll need to add the
 X.509 CA certificate NmcSocks creates locally into your browser. The procedure varies
-for each browser. The CA certificate is located under <NmcSocksDataDir>/namecoin_root.crt  
-On unix, <NmcSocksDataDir> is ~/.nmcsocks/  
-On windows, it's %APP_DATA%/NmcSocks/  
-Mac Users, look under ~/Library/Application\ Support/NmcSocks/
+for each browser. The CA certificate is located under `<NmcSocksDataDir>/namecoin_root.crt`  
+On unix, `<NmcSocksDataDir> is ~/.nmcsocks/`  
+On windows, it's `%APP_DATA%/NmcSocks/`  
+Mac Users, look under `~/Library/Application\ Support/NmcSocks/`
 
 ## todo
 
