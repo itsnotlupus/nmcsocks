@@ -77,6 +77,22 @@ If you are using the source version, you will also need:
 - node ( http://nodejs.org/ )  
 - optimist and binary ( `npm install optimist binary `)
 
+If you are building from the top of the tree, you will also need:
+
+- dcrypt . `npm install dcrypt` would normally work, but I rely on 
+ a couple of patches that aren't in it yet, so you'll need to grab it from
+ https://github.com/itsnotlupus/dcrypt . Put that under nmcsocks/node_modules/dcrypt,
+ and build it with `node-waf configure build`. That ought to do it.
+
+## new stuff to pay attention to:
+
+If you're trying to use the new "fingerprint" support code, you'll need to add the
+X.509 CA certificate NmcSocks creates locally into your browser. The procedure varies
+for each browser. The CA certificate is located under <NmcSocksDataDir>/namecoin_root.crt  
+On unix, <NmcSocksDataDir> is ~/.nmcsocks/  
+On windows, it's %APP_DATA%/NmcSocks/  
+Mac Users, look under ~/Library/Application\ Support/NmcSocks/
+
 ## todo
 
 - ipv6 support
@@ -88,3 +104,4 @@ If you are using the source version, you will also need:
     v0.2: better draft spec support (delegate/import/alias stuff), infinite loop mitigation
     v0.3: embedded DNS server to resolve .bit domains
     v0.4: better DNS server support, various bug fixes
+    v0.5: support for the "fingerprint" record field, enabled decentralized TLS certificate trust.
